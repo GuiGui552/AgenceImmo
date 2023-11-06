@@ -18,7 +18,7 @@
         </div>
 
         <div class="flex justify-between items-center">
-            <a href="#" class="text-blue-500 underline font-bold">{{$bien->titre}}</a>
+            <a href="{{ route('biens.show', ['bien' => $bien->id]) }}" class="text-blue-500 underline font-bold">{{$bien->titre}}</a>
             <p><i class="fa-solid fa-camera"></i>&nbsp;{{ count($bien->images) }}</p>
         </div>
         <p>{{ $bien->surface }} m² - {{ $bien->ville }} ({{ $bien->code_postal }})</p>

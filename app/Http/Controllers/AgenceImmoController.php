@@ -59,4 +59,14 @@ class AgenceImmoController extends Controller
         return $view;
     }
 
+    public function bienShow(Bien $bien) {
+
+        // $bienWithImages = Bien::with('images')->find($bien->id);
+        // dd($bienWithImages->option);
+
+        return view('bien.bienShow', [
+            'bien' => Bien::with('images')->with('option')->find($bien->id)
+        ]);
+    }
+
 }

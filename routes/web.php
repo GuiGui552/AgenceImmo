@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AgenceImmoController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Gate;
 
 /*
@@ -80,6 +81,9 @@ Route::prefix('/biens')->name('biens.')->controller(AgenceImmoController::class)
 
     Route::get('/search', 'searchBiens')
         ->name('search');
+
+    Route::get('/{bien}/show', 'bienShow')
+        ->name('show');
 
 });
 
