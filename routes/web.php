@@ -85,6 +85,9 @@ Route::prefix('/biens')->name('biens.')->controller(AgenceImmoController::class)
     Route::get('/{bien}/show', 'bienShow')
         ->name('show');
 
+    Route::post('/{bien}/contact', 'contact')
+        ->name('contact');
+
 });
 
 Route::get('/dashboard', function () {

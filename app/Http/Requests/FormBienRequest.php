@@ -25,7 +25,7 @@ class FormBienRequest extends FormRequest
             'titre' => ['required', 'min:6'],
             'surface' => ['required', 'numeric', 'min:1'],
             'prix' => ['required', 'numeric', 'min:1'],
-            'description' => ['required', 'max:1000'],
+            'description' => ['required', 'max:5000'],
             'pieces' => ['required', 'numeric', 'min:1'],
             'chambres' => ['required', 'numeric', 'min:1', 'lte:pieces'],
             'etages' => ['required', 'numeric', 'min:0'],

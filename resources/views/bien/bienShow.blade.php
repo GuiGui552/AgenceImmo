@@ -69,6 +69,8 @@
                     </span>
                 </button>
             </div>
+            <h1 class="font-bold text-lg mt-5">Description de l'annonce:</h1>
+            <p class="mt-3 text-justify">{{ $bien->description }}</p>
         </div>
 
         
@@ -85,7 +87,9 @@
             <hr class="text-gray-500 border my-16 w-1/2">
             <div class="grid">
                 <h1 class="mb-2 text-lg font-bold">Intéressé par ce bien ?</h1>
-                <form action="#">
+                
+                <form action="{{ route('biens.contact', $bien) }}" method="POST">
+                    @csrf
                     <div class="grid grid-cols-2">
                         <div class="mr-2 mb-2">
                             <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900">Nom</label>
@@ -112,7 +116,85 @@
                 
                     <button type="button" class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Envoyer</button>
                 </form>
+
             </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8 my-8 ml-8">
+        <div>
+            <h1 class="font-bold text-2xl mb-5">Caractéristiques</h1>
+            
+            <div class="relative overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Caractéristique
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Valeur
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="bg-white border-b ">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Surface
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $bien->surface }} m²
+                            </td>
+                        </tr>
+
+                        <tr class="bg-gray-50 border-b">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Pièces
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $bien->pieces }}
+                            </td>
+                        </tr>
+
+                        <tr class="bg-white border-b ">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Chambres
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $bien->chambres }}
+                            </td>
+                        </tr>
+
+                        <tr class="bg-gray-50 border-b">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Etages
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $bien->etages }}
+                            </td>
+                        </tr>
+
+                        <tr class="bg-white border-b ">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                Pièces
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $bien->pieces }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="mr-8">
+            <h1 class="font-bold text-2xl mb-5">Options</h1>
+            <ul class="text-center border border-gray-200">
+                @foreach ($bien->option as $opt)
+                    <li class="border py-2">{{ $opt->nom }}</li>
+                @endforeach
+            </ul>
         </div>
     </div>
 
