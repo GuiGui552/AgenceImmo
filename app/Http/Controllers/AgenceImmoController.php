@@ -73,7 +73,6 @@ class AgenceImmoController extends Controller
     }
 
     public function contact(Bien $bien, PropertyContactRequest $request){
-        
         Mail::send(new PropertyContactMail($bien, $request->validated()));
         
         return redirect()->back()->with('success', 'Le mail a été envoyé avec succès.');

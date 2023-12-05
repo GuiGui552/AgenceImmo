@@ -86,17 +86,17 @@
             </h1>
             <hr class="text-gray-500 border my-16 w-1/2">
             <div class="grid">
-                <h1 class="mb-2 text-lg font-bold">Intéressé par ce bien ?</h1>
+                <h1 class="mb-2 text-lg font-bold">Intéressé par ce bien ? Contacter-nous.</h1>
                 
                 <form action="{{ route('biens.contact', $bien) }}" method="POST">
                     @csrf
                     <div class="grid grid-cols-2">
                         <div class="mr-2 mb-2">
-                            <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900">Nom</label>
+                            <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900">Prénom</label>
                             <input type="text" id="prenom" name="prenom" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </div>
                         <div>
-                            <label for="nom" class="block mb-2 text-sm font-medium text-gray-900">Prénom</label>
+                            <label for="nom" class="block mb-2 text-sm font-medium text-gray-900">Nom</label>
                             <input type="text" id="nom" name="nom" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </div>
                     </div>
@@ -108,13 +108,13 @@
 
                         <div class="mb-2">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">E-mail</label>
-                            <input type="text" id="email" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
+                            <input type="text" id="email" name="email" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500">
                         </div>
                     </div>
                     <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Votre message</label>
-                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Votre message ici..."></textarea>
+                    <textarea id="message" rows="4" name="message" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Votre message ici..."></textarea>
                 
-                    <button type="button" class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Envoyer</button>
+                    <button type="submit" class="mt-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Envoyer</button>
                 </form>
 
             </div>

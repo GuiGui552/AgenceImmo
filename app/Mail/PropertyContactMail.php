@@ -17,7 +17,7 @@ class PropertyContactMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(Bien $bien, array $data)
+    public function __construct(public Bien $bien, public array $data)
     {
     }
 
