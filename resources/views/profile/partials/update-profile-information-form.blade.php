@@ -28,7 +28,7 @@
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
-
+        <p>{{ $user->avatarUrl() }}</p>
         <div>
             <x-input-label for="avatar" :value="__('Modifier votre photo de profil')" />
             <input id="avatar" name="avatar" type="file" value="" onchange="previewImage()" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none">

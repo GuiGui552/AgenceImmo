@@ -16,6 +16,7 @@ class AgenceImmoController extends Controller
         return view('home', [
             'biens' => Bien::select('biens.id', 'titre', 'surface', 'prix', 'ville', 'code_postal')
                             ->with('images')
+                            ->where('vendu', false)
                             ->orderBy('created_at', 'desc')
                             ->take(4)
                             ->get()
@@ -26,6 +27,7 @@ class AgenceImmoController extends Controller
         return view('bien.listeBiens', [
             'biens' => Bien::select('biens.id', 'titre', 'surface', 'prix', 'ville', 'code_postal')
                         ->with('images')
+                        ->where('vendu', false)
                         ->orderBy('created_at', 'desc')
                         ->get()
         ]);
